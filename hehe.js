@@ -66,7 +66,7 @@ script.registerModule({
 
 }, function (module) {
     module.on("enable", function () {
-    Chat.print(updateNeeded("AutoUpdate.js", "https://raw.githubusercontent.com/FaaatPotato/JartexScript/main/JartexScript.js"))
+    Chat.print(updateNeeded("AutoUpdate.js", "https://raw.githubusercontent.com/FaaatPotato/JartexScript-2.0/main/hehe.js"))
     });
     module.on("disable", function () {
 
