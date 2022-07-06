@@ -13,7 +13,7 @@ var File = Java.type("java.io.File");
 var FileReader = Java.type("java.io.FileReader");
 
 
-function updateNeeded(scriptName, rawLink) {
+function updateReq(scriptName, rawLink) {
 	var a = getLocalData(scriptName);
 	var b = getOnlineData(rawLink);
 	
