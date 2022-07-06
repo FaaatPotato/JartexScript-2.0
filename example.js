@@ -71,11 +71,12 @@ function installUpdate(scriptName, rawLink) {
 		var out = new FileOutputStream(f);
 		out.write(updateContent.getBytes());
 		out.close();
+		Chat.print("Update installed!");
 	} catch (err) {
 		Chat.print("Error: " + err);
 	}
   } else {
-  return Chat.print("Latest already installed!");	  
+  Chat.print("Latest already installed!");	  
   }
 }
 
