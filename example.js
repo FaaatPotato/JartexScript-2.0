@@ -75,7 +75,7 @@ function installUpdate(scriptName, rawLink) {
 		Chat.print("Error: " + err);
 	}
   } else {
-  Chat.print("Latest already installed!");	  
+  return Chat.print("Latest already installed!");	  
   }
 }
 
@@ -88,7 +88,7 @@ script.registerModule({
 
 }, function (module) {
     module.on("enable", function () {
-    Chat.print(updateReq("AutoUpdate.js", "https://raw.githubusercontent.com/FaaatPotato/JartexScript-2.0/main/example.js"))
+    installUpdate("AutoUpdate.js", "https://raw.githubusercontent.com/FaaatPotato/JartexScript-2.0/main/example.js");
     });
     module.on("disable", function () {
 
