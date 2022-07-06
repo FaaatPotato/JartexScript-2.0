@@ -57,6 +57,28 @@ function getOnlineData(rawLink) {
     return data;
 }
 
+function installUpdate(scriptName, rawLink) {
+	if (updateReq(scriptName, rawLink) != 0) {
+	var a = new File(mc.mcDataDir, "LiquidBounce-1.8.9");
+	var b = new File(a, "scripts");
+	(new File(b, scriptName)).createNewFile();
+	
+	try {
+		var updateContent = getOnlineData(rawLink);
+		var a = new File(mc.mcDataDir, "LiquidBounce-1.8.9");
+		var b = new File(a, "scripts");
+		var f = new File(b, scriptName);
+		var out = new FileOutputStream(f);
+		out.write(updateContent.getBytes());
+		out.close();
+	} catch (err) {
+		Chat.print("Error: " + err);
+	}
+  } else {
+  Chat.print("Latest already installed!");	  
+  }
+}
+
 script.registerModule({
     name: "AutoUpdate",
     description: "Nutting in cats is illegal",
@@ -66,7 +88,7 @@ script.registerModule({
 
 }, function (module) {
     module.on("enable", function () {
-    Chat.print(updateNeeded("AutoUpdate.js", "https://raw.githubusercontent.com/FaaatPotato/JartexScript-2.0/main/hehe.js"))
+    installUpdate("AutoUpdate", "https://raw.githubusercontent.com/FaaatPotato/JartexScript-2.0/main/hehe.js");
     });
     module.on("disable", function () {
 
