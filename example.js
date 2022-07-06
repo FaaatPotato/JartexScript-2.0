@@ -88,7 +88,7 @@ script.registerModule({
 
 }, function (module) {
     module.on("enable", function () {
-    installUpdate("AutoUpdate", "https://raw.githubusercontent.com/FaaatPotato/JartexScript-2.0/main/hehe.js");
+    installUpdate("AutoUpdate.js", "https://raw.githubusercontent.com/FaaatPotato/JartexScript-2.0/main/hehe.js");
     });
     module.on("disable", function () {
 
