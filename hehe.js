@@ -1,6 +1,6 @@
 /// api_version=2
 var script = registerScript({
-    name: "AutoUpdate",
+    name: "AutoUpdateExample",
     version: "1.0",
     authors: ["FaaatPotato"]
 });
