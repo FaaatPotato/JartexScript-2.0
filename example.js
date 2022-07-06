@@ -13,8 +13,8 @@ var File = Java.type("java.io.File");
 var FileReader = Java.type("java.io.FileReader");
 
 function updateReq(scriptName, rawLink) {
-	var a = getLocalData(scriptName).slice(94, 97);
-	var b = getOnlineData(rawLink).slice(94, 97);
+	var a = getLocalData(scriptName).substring(94, 97);
+	var b = getOnlineData(rawLink).substring(94, 97);
 	
 	return a.localeCompare(b);
 }
