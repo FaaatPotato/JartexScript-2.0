@@ -12,10 +12,9 @@ var FileOutputStream = Java.type("java.io.FileOutputStream");
 var File = Java.type("java.io.File");
 var FileReader = Java.type("java.io.FileReader");
 
-
 function updateReq(scriptName, rawLink) {
-	var a = getLocalData(scriptName);
-	var b = getOnlineData(rawLink);
+	var a = getLocalData(scriptName).slice(94, 97);
+	var b = getOnlineData(rawLink).slice(94, 97);
 	
 	return a.localeCompare(b);
 }
@@ -64,20 +63,20 @@ function installUpdate(scriptName, rawLink) {
 	(new File(b, scriptName)).createNewFile();
 	
 	try {
-		var updateContent = getOnlineData(rawLink);
-		var a = new File(mc.mcDataDir, "LiquidBounce-1.8.9");
-		var b = new File(a, "scripts");
-		var f = new File(b, scriptName);
-		var out = new FileOutputStream(f);
-		out.write(updateContent.getBytes());
-		out.close();
-		Chat.print("Update installed!");
+    var updateContent = getOnlineData(rawLink);
+	var a = new File(mc.mcDataDir, "LiquidBounce-1.8.9");
+	var b = new File(a, "scripts");
+	var f = new File(b, scriptName);
+	var out = new FileOutputStream(f);
+	out.write(updateContent.getBytes());
+	out.close();
+	Chat.print("Update installed!");
 	} catch (err) {
-		Chat.print("Error: " + err);
+	Chat.print("Error: " + err);
 	}
-  } else {
-  Chat.print("Latest already installed!");	  
-  }
+    } else {
+    Chat.print("Latest already installed!");	  
+}
 }
 
 script.registerModule({
