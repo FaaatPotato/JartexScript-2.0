@@ -88,7 +88,7 @@ script.registerModule({
 
 }, function (module) {
     module.on("enable", function () {
-    installUpdate("AutoUpdate.js", "https://raw.githubusercontent.com/FaaatPotato/JartexScript-2.0/main/example.js");
+    Chat.print(updateReq("AutoUpdate.js", "https://raw.githubusercontent.com/FaaatPotato/JartexScript-2.0/main/example.js"))
     });
     module.on("disable", function () {
 
